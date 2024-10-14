@@ -1,14 +1,12 @@
-// /routes/studentRoutes.js
+// routes/studentRoutes.js
 const express = require('express');
 const { getAllStudents, getStudentById, createStudent, updateStudent, deleteStudent } = require('../controllers/studentController');
-
 const router = express.Router();
 
-// Define routes for CRUD operations
-router.get('/', getAllStudents);         // Get all students
-router.get('/:id', getStudentById);     // Get a specific student by ID
-router.post('/', createStudent);        // Create a new student
-router.put('/:id', updateStudent);      // Update a student by ID
-router.delete('/:id', deleteStudent);   // Delete a student by ID
+router.get('/', getAllStudents);                // GET /api/students
+router.get('/:id', getStudentById);             // GET /api/students/:id
+router.post('/', createStudent);                // POST /api/students
+router.put('/:id', updateStudent);              // PUT /api/students/:id
+router.delete('/:id', deleteStudent);           // DELETE /api/students/:id
 
 module.exports = router;
